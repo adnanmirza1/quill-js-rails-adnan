@@ -40,7 +40,6 @@ Add active storage and  Quill to your manifest in app/assets/javascripts/applica
 ```
 require("@rails/activestorage").start()
 import "quill-editor";
-//= require jquery3
 ```
 it's also important to ensure that you've added a CSRF meta tag to your views
 These are typically added to the <head> tag within the app/views/layouts/application.html.erb file (or in the corresponding partial file if these are being used):
