@@ -86,3 +86,5 @@ Now you'll want to make sure that the Quill core and Snow styles are added eithe
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/adnanmirza1/quill-js-rails-adnan
 
+## LICENSE
+The gem is available as open source under the terms of the MIT License.
