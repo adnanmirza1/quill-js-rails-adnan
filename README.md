@@ -8,7 +8,7 @@ Quill is a free, open source WYSIWYG editor built for the modern web. With its m
 Add the following lines to your applications Gemfile:
 
 ```
-gem 'quill-js-rails-adnan', '~> 0.0.1'
+gem 'quill-js-rails-adnan', '~> 0.0.2'
 ```
 Then run bundle install to update your application's bundle.
 ```
