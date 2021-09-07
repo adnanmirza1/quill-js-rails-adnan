@@ -27,8 +27,6 @@ Add the following code in your form to use quill js text editor:
 ```
 here, @article is the model name and body is column name which can be either text field or string.
 
-Add active storage and  Quill to your manifest in app/assets/javascripts/application.js:
-
 Install active storage in your rails app (for using images with your quill js editor)
 
 ```
@@ -36,6 +34,7 @@ rails active_storage:install
 rails db:migrate
 ```
 
+Add active storage and  Quill to your manifest in app/assets/javascripts/application.js:
 ```
 require("@rails/activestorage").start()
 import "./quill-editor.js"
