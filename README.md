@@ -14,6 +14,19 @@ Then run bundle install to update your application's bundle.
 ```
 bundle install
 ```
+
+Add the following code in your form to use quill js text editor:
+```
+<div>
+  <%= f.hidden_field :body, class: "article-content" %>
+  <div id="editor-container" style="height: 30rem; width: 100%;">
+    <%= raw(@article.body) %>
+  </div>
+</div>
+
+```
+here, @article is the model name and body is column name which can be either text field or string.
+
 Add active storage and  Quill to your manifest in app/assets/javascripts/application.js:
 
 Install active storage in your rails app (for using images with your quill js editor)
@@ -43,5 +56,28 @@ To use QuillJS in your app, it will need to be added as a dependency in your pac
     "quill-image-drop-module": "^1.0.3",
     "svg-inline-loader": "0.8.2"
   },
+```
+Along with the file-loader package (which is already included as a Webpacker dependency), should then be referred to in the config/webpack/environment.js file like so add:
+```
+const { environment } = require('@rails/webpacker')
+
+const fileLoader = environment.loaders.get('file')
+fileLoader.exclude = /node_modules[\\/]quill/
+
+const svgLoader = {
+    test: /\.svg$/,
+    loader: 'svg-inline-loader'
+}
+
+environment.loaders.prepend('svg', svgLoader)
+
+module.exports = environment
+```
+Now you'll want to make sure that the Quill core and Snow styles are added either to the stylesheets in Sprockets or in Webpacker. Personally, I chose to add this to sprockets because I ran into issues with Heroku when these were added to Webpacker. I did this by adding the following to the app/assets/stylesheets/application.css file
+
+```
+*= require_self
+*= require 'quill/dist/quill.core.css'
+*= require 'quill/dist/quill.snow.css'
 ```
 
