@@ -15,6 +15,8 @@ Then run bundle install to update your application's bundle.
 bundle install
 ```
 
+## Usage
+
 Add the following code in your form to use quill js text editor:
 ```
 <div>
@@ -79,4 +81,8 @@ Now you'll want to make sure that the Quill core and Snow styles are added eithe
 *= require 'quill/dist/quill.core.css'
 *= require 'quill/dist/quill.snow.css'
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/adnanmirza1/quill-js-rails-adnan
 
